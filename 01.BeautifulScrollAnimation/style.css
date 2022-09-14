@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
+body{
+    background-color: #131316;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+section{
+    display: grid;
+    place-content: center;
+    place-items: center;
+    min-height: 100vh;
+}
+
+/* easier to do in a component framework where each component can be distinguished based on cmp. type */
+
+@media(prefers-reduced-motion){
+.hidden{
+    opacity: 0;
+    transition: all 1s;
+}
+
+}
+
+/* fade animation with transition property */
+.hidden{
+    opacity: 0;
+    transform: translate(100%);
+    transition: all 1s;
+}
+
+.show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* extra, staggered fading into frame */
+.logos{
+    display: flex;
+}
+
+.logo:nth-child(2){
+    transition-delay: 400ms;
+}
+
+.logo:nth-child(3){
+    transition-delay: 800ms;
+}
+
+.logo:nth-child(4){
+    transition-delay: 1000ms;
+}
